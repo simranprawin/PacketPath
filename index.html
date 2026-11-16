@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PacketPath | Network Protocol Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🌐</div>
+        <div>
+          <h2>PacketPath</h2>
+          <small>NETWORK LAB</small>
+        </div>
+      </div>
+
+      <div class="side-label">LEARNING MODULES</div>
+
+      <nav class="navigation">
+        <button class="nav-btn active" data-page="overview">⌂ <span>Overview</span></button>
+        <button class="nav-btn" data-page="osi">▤ <span>OSI Model</span></button>
+        <button class="nav-btn" data-page="tcp">⇄ <span>TCP Handshake</span></button>
+        <button class="nav-btn" data-page="dns">⌕ <span>DNS Simulator</span></button>
+        <button class="nav-btn" data-page="journey">➜ <span>Packet Journey</span></button>
+        <button class="nav-btn" data-page="compare">⇆ <span>TCP vs UDP</span></button>
+        <button class="nav-btn" data-page="topology">⌘ <span>Network Builder</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="online-dot"></div>
+        <div>
+          <strong>Simulation Ready</strong>
+          <small>Educational environment</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div>
+          <div class="breadcrumb">PACKETPATH / <span id="currentSection">OVERVIEW</span></div>
+          <h1 id="pageTitle">Network Learning Dashboard</h1>
+        </div>
+        <div class="top-status">
+          <span class="status-dot"></span>
+          SYSTEM ONLINE
+        </div>
+      </header>
+
+      <!-- OVERVIEW -->
+      <section class="page active" id="overview">
+        <div class="welcome-banner">
+          <div>
+            <span class="eyebrow">WELCOME TO YOUR NETWORK LAB</span>
+            <h2>Understand how the internet works.</h2>
+            <p>Explore network layers, simulate protocols, and visualize how data travels across networks.</p>
+            <button class="primary-btn" data-go="osi">Explore OSI Model →</button>
+          </div>
+          <div class="welcome-art">🌐</div>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <h2>Learning modules</h2>
+            <p>Choose a simulation to get started.</p>
+          </div>
+          <span class="small-tag">7 MODULES</span>
+        </div>
+
+        <div class="module-grid">
+          <button class="module-card" data-go="osi">
+            <span class="module-icon purple">▤</span>
+            <h3>OSI Model</h3>
+            <p>Explore the seven layers of networking.</p>
+            <span class="card-link">Explore module →</span>
+          </button>
+
+          <button class="module-card" data-go="tcp">
+            <span class="module-icon blue">⇄</span>
+            <h3>TCP Handshake</h3>
+            <p>Understand how TCP connections begin.</p>
+            <span class="card-link">Start simulation →</span>
+          </button>
+
+          <button class="module-card" data-go="dns">
+            <span class="module-icon green">⌕</span>
+            <h3>DNS Simulator</h3>
+            <p>See how domain names resolve to IP addresses.</p>
+            <span class="card-link">Try DNS →</span>
+          </button>
+
+          <button class="module-card" data-go="journey">
+            <span class="module-icon orange">➜</span>
+            <h3>Packet Journey</h3>
+            <p>Visualize a packet moving through a network.</p>
+            <span class="card-link">Send a packet →</span>
+          </button>
+
+          <button class="module-card" data-go="compare">
+            <span class="module-icon pink">⇆</span>
+            <h3>TCP vs UDP</h3>
+            <p>Compare two important transport protocols.</p>
+            <span class="card-link">Compare →</span>
+          </button>
+
+          <button class="module-card" data-go="topology">
+            <span class="module-icon cyan">⌘</span>
+            <h3>Network Builder</h3>
+            <p>Create a simple network topology.</p>
+            <span class="card-link">Build network →</span>
+          </button>
+        </div>
+
+        <div class="info-strip">
+          <span>💡</span>
+          <div>
+            <strong>Learning tip</strong>
+            <p>Start with the OSI model, then explore TCP, DNS, and packet transmission.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OSI MODEL -->
+      <section class="page" id="osi">
+        <div class="intro">
+          <span class="eyebrow">MODULE 01</span>
+          <h2>OSI Model Explorer</h2>
+          <p>Click any layer to understand its purpose, functions, and examples.</p>
+        </div>
+
+        <div class="osi-layout">
+          <div class="osi-stack" id="osiStack">
+            <button class="osi-layer layer-7 active" data-layer="7"><b>7</b><span><strong>Application</strong><small>User-facing network services</small></span><em>Application</em></button>
+            <button class="osi-layer layer-6" data-layer="6"><b>6</b><span><strong>Presentation</strong><small>Data formatting and encryption</small></span><em>Presentation</em></button>
+            <button class="osi-layer layer-5" data-layer="5"><b>5</b><span><strong>Session</strong><small>Session management</small></span><em>Session</em></button>
+            <button class="osi-layer layer-4" data-layer="4"><b>4</b><span><strong>Transport</strong><small>End-to-end delivery</small></span><em>Transport</em></button>
+            <button class="osi-layer layer-3" data-layer="3"><b>3</b><span><strong>Network</strong><small>Logical addressing and routing</small></span><em>Network</em></button>
+            <button class="osi-layer layer-2" data-layer="2"><b>2</b><span><strong>Data Link</strong><small>Frames and MAC addresses</small></span><em>Data Link</em></button>
+            <button class="osi-layer layer-1" data-layer="1"><b>1</b><span><strong>Physical</strong><small>Signals and physical media</small></span><em>Physical</em></button>
+          </div>
+
+          <div class="detail-panel">
+            <span class="eyebrow">LAYER DETAILS</span>
+            <div class="layer-number" id="layerNumber">LAYER 7</div>
+            <h2 id="layerName">Application Layer</h2>
+            <p id="layerDescription">Provides network services directly to applications used by people.</p>
+
+            <h4>Key functions</h4>
+            <ul id="layerFunctions">
+              <li>Provides application-level network services.</li>
+              <li>Supports communication between applications.</li>
+            </ul>
+
+            <h4>Common examples</h4>
+            <div class="example-tags" id="layerExamples">
+              <span>HTTP</span><span>DNS</span><span>SMTP</span>
+            </div>
+            <div class="layer-navigation">
+              <button class="secondary-btn" id="prevLayer">← Previous</button>
+              <button class="primary-btn" id="nextLayer">Next layer →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TCP HANDSHAKE -->
+      <section class="page" id="tcp">
+        <div class="intro">
+          <span class="eyebrow">MODULE 02</span>
+          <h2>TCP 3-Way Handshake</h2>
+          <p>Watch how a client and server establish a reliable TCP connection.</p>
+        </div>
+
+        <div class="simulation-card">
+          <div class="connection-heading">
+            <div class="endpoint">
+              <div class="endpoint-icon">💻</div>
+              <strong>CLIENT</strong>
+              <small>192.168.1.10</small>
+            </div>
+            <div class="connection-center">
+              <span class="connection-line"></span>
+              <span id="connectionStatus" class="status-pill">NOT CONNECTED</span>
+            </div>
+            <div class="endpoint">
+              <div class="endpoint-icon">🖥️</div>
+              <strong>SERVER</strong>
+              <small>93.184.216.34</small>
+            </div>
+          </div>
+
+          <div class="handshake-steps">
+            <div class="handshake-step" id="step1">
+              <span class="step-number">01</span>
+              <h3>SYN</h3>
+              <p>Client requests a connection.</p>
+              <span class="packet-label">CLIENT → SERVER</span>
+            </div>
+            <div class="handshake-step" id="step2">
+              <span class="step-number">02</span>
+              <h3>SYN-ACK</h3>
+              <p>Server acknowledges and responds.</p>
+              <span class="packet-label">SERVER → CLIENT</span>
+            </div>
+            <div class="handshake-step" id="step3">
+              <span class="step-number">03</span>
+              <h3>ACK</h3>
+              <p>Client acknowledges the response.</p>
+              <span class="packet-label">CLIENT → SERVER</span>
+            </div>
+          </div>
+
+          <div class="simulation-log" id="handshakeLog">
+            <span class="log-dot"></span>
+            Waiting to start the simulation...
+          </div>
+
+          <div class="button-row">
+            <button class="primary-btn" id="startHandshake">▶ Start Handshake</button>
+            <button class="secondary-btn" id="resetHandshake">↻ Reset</button>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <h3>Why is the TCP handshake important?</h3>
+          <p>It synchronizes sequence numbers and confirms that both sides are ready to communicate before normal data transfer begins.</p>
+        </div>
+      </section>
+
+      <!-- DNS -->
+      <section class="page" id="dns">
+        <div class="intro">
+          <span class="eyebrow">MODULE 03</span>
+          <h2>DNS Lookup Simulator</h2>
+          <p>Explore how a domain name is translated into an IP address.</p>
+        </div>
+
+        <div class="simulation-card">
+          <label for="domainInput">Enter a domain name</label>
+          <div class="input-row">
+            <input id="domainInput" type="text" placeholder="example.com" value="example.com">
+            <button class="primary-btn" id="resolveDomain">Resolve DNS →</button>
+          </div>
+
+          <div class="dns-flow" id="dnsFlow">
+            <div class="dns-node" data-dns="browser"><span>💻</span><strong>Browser</strong><small>Your request</small></div>
+            <div class="dns-arrow">→</div>
+            <div class="dns-node" data-dns="resolver"><span>🔎</span><strong>DNS Resolver</strong><small>Finds the answer</small></div>
+            <div class="dns-arrow">→</div>
+            <div class="dns-node" data-dns="server"><span>🌐</span><strong>DNS Server</strong><small>Domain records</small></div>
+          </div>
+
+          <div class="dns-result" id="dnsResult">
+            <span class="result-icon">💡</span>
+            <div>
+              <strong>Ready for lookup</strong>
+              <p>Enter a domain and press Resolve DNS to begin the educational simulation.</p>
+            </div>
+          </div>
+          <p class="disclaimer">This is a predefined educational simulation, not a live DNS query.</p>
+        </div>
+
+        <div class="concept-card">
+          <h3>What is DNS?</h3>
+          <p>Domain Name System (DNS) translates human-readable domain names, such as example.com, into IP addresses that computers use to communicate.</p>
+        </div>
+      </section>
+
+      <!-- PACKET JOURNEY -->
+      <section class="page" id="journey">
+        <div class="intro">
+          <span class="eyebrow">MODULE 04</span>
+          <h2>Packet Journey Simulator</h2>
+          <p>Send a simulated data packet from one computer to another.</p>
+        </div>
+
+        <div class="simulation-card">
+          <div class="packet-network">
+            <div class="network-node">
+              <div class="network-icon">💻</div>
+              <strong>Sender</strong>
+              <small>192.168.1.10</small>
+            </div>
+            <div class="network-link"><span class="moving-packet" id="movingPacket">●</span></div>
+            <div class="network-node">
+              <div class="network-icon">📡</div>
+              <strong>Router</strong>
+              <small>192.168.1.1</small>
+            </div>
+            <div class="network-link"><span class="moving-packet" id="movingPacket2">●</span></div>
+            <div class="network-node">
+              <div class="network-icon">🖥️</div>
+              <strong>Receiver</strong>
+              <small>192.168.1.20</small>
+            </div>
+          </div>
+
+          <div class="packet-controls">
+            <div>
+              <label for="packetMessage">Message to send</label>
+              <input id="packetMessage" value="Hello, Network!" maxlength="60">
+            </div>
+            <button class="primary-btn" id="sendPacket">➜ Send Packet</button>
+          </div>
+
+          <div class="packet-status" id="packetStatus">Packet is waiting at the sender.</div>
+
+          <div class="packet-info">
+            <div><small>PROTOCOL</small><strong>TCP (SIMULATED)</strong></div>
+            <div><small>SOURCE IP</small><strong>192.168.1.10</strong></div>
+            <div><small>DESTINATION IP</small><strong>192.168.1.20</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TCP VS UDP -->
+      <section class="page" id="compare">
+        <div class="intro">
+          <span class="eyebrow">MODULE 05</span>
+          <h2>TCP vs UDP</h2>
+          <p>Compare the two major transport layer protocols.</p>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="protocol-card tcp-card">
+            <div class="protocol-icon">🔒</div>
+            <h2>TCP</h2>
+            <p class="protocol-subtitle">Transmission Control Protocol</p>
+            <span class="protocol-badge">Connection-oriented</span>
+            <ul>
+              <li>Reliable data delivery</li>
+              <li>Connection establishment required</li>
+              <li>Uses acknowledgements</li>
+              <li>Maintains packet order</li>
+              <li>Generally more overhead</li>
+            </ul>
+            <div class="use-case"><strong>Common uses</strong><p>Web browsing, email, file transfer</p></div>
+          </div>
+
+          <div class="protocol-card udp-card">
+            <div class="protocol-icon">⚡</div>
+            <h2>UDP</h2>
+            <p class="protocol-subtitle">User Datagram Protocol</p>
+            <span class="protocol-badge">Connectionless</span>
+            <ul>
+              <li>No delivery guarantee</li>
+              <li>No handshake required</li>
+              <li>No acknowledgements by default</li>
+              <li>Packets may arrive out of order</li>
+              <li>Lower protocol overhead</li>
+            </ul>
+            <div class="use-case"><strong>Common uses</strong><p>Live streaming, online gaming, DNS</p></div>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <h3>Which one should you use?</h3>
+          <p>TCP is useful when reliability and ordered delivery matter. UDP is useful when low latency and speed are priorities and the application can handle loss or recovery itself.</p>
+        </div>
+      </section>
+
+      <!-- NETWORK BUILDER -->
+      <section class="page" id="topology">
+        <div class="intro">
+          <span class="eyebrow">MODULE 06</span>
+          <h2>Network Topology Builder</h2>
+          <p>Add devices and create a simple network layout.</p>
+        </div>
+
+        <div class="simulation-card">
+          <div class="builder-toolbar">
+            <button class="secondary-btn" data-add="Computer">💻 Add Computer</button>
+            <button class="secondary-btn" data-add="Router">📡 Add Router</button>
+            <button class="secondary-btn" data-add="Server">🖥️ Add Server</button>
+            <button class="secondary-btn" id="connectNodes">↔ Connect two nodes</button>
+            <button class="danger-btn" id="clearTopology">Clear</button>
+          </div>
+
+          <p class="builder-hint" id="builderHint">Add devices to your network. Select two devices and click Connect to link them.</p>
+          <div class="topology-canvas" id="topologyCanvas">
+            <svg id="topologyLines"></svg>
+            <div class="empty-topology" id="emptyTopology">
+              <span>⌘</span>
+              <strong>Your network starts here</strong>
+              <small>Add a computer, router, or server above.</small>
+            </div>
+          </div>
+          <div class="topology-footer">
+            <span id="deviceCount">0 devices</span>
+            <span id="connectionCount">0 connections</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        PacketPath © 2026 · Built for learning computer networks
+        <span>Educational simulations only</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
